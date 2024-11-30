@@ -1,0 +1,605 @@
+/* Define @font-face rule for Recoleta-Bold */
+@font-face {
+  font-family: 'Recoleta';
+  src: url('assets/fonts/Recoleta-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+/* Define global variables */
+:root {
+  /* Colors */
+  --green: #214E34;
+  --lilac: #A886B9;
+  --ivory: #EbE3D6;
+  --blue: #105D9E;
+  --off-black: #191919;
+  --brown: #8c603f;
+
+  /* Font sizes */
+  --base-font-size: 16px;
+  --body-font-size: var(--base-font-size);
+  --body-font-size-lg-screen: calc(var(--base-font-size) * 1.25);
+  --heading-1-font-size: calc(var(--base-font-size) * 2);
+  --heading-2-font-size: calc(var(--base-font-size) * 1.5);
+  --heading-3-font-size: calc(var(--base-font-size) * 1.25);
+  --heading-4-font-size: var(--base-font-size);
+  --heading-5-font-size: calc(var(--base-font-size) * 0.875);
+  --heading-6-font-size: calc(var(--base-font-size) * 0.75);
+  --nav-font-size: var(--base-font-size);
+  --button-font-size: var(--base-font-size);
+
+
+  --border-radius: 15px;
+
+  --content-margin-mobile: 5%;
+
+  --section-margin-mobile:10%;
+
+  --feature-section-padding-lg: 70px 50px 70px 50px;
+  --feature-section-padding-xl: 70px 150px 70px 150px;
+  --feature-section-padding-xxl: 280px 200px 280px 200px;
+
+
+
+  --fs-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
+  --fs-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+  --fs-md: clamp(1.25rem, 0.61vi + 1.1rem, 1.58rem);
+  --fs-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
+  --fs-xl: clamp(1.95rem, 1.56vi + 1.56rem, 2.81rem);
+  --fs-xxl: clamp(2.44rem, 2.38vi + 1.85rem, 3.75rem);
+  --fs-xxxl: clamp(3.05rem, 3.54vi + 2.17rem, 5rem);
+}
+
+/* Apply Recoleta-Bold font to specific elements */
+h1, h2, h3, h4 {
+  font-family: 'Recoleta', sans-serif;
+  font-weight: bold;
+}
+
+/* Apply global font sizes */
+body {
+  font-size: var(--fs-base);
+/*  font-size: var(--body-font-size);*/
+}
+
+h1 {
+  font-size: var(--fs-xxl);
+}
+
+h2 {
+  font-size: var(--fs-xl);
+}
+
+h3 {
+  font-size: var(--fs-lg);
+}
+
+h4 {
+  font-size: var(--fs-md);
+}
+
+h5 {
+  font-size: var(--heading-5-font-size);
+}
+
+h6 {
+  font-size: var(--heading-6-font-size);
+}
+
+nav {
+  font-size: var(--fs-base);
+}
+
+button {
+  font-size: var(--fs-base);
+}
+
+/* Additional styles */
+body {
+  font-family: 'Karla', sans-serif;
+  background-color: var(--ivory); /* Use the ivory color variable */
+  transition: background-color 1.5s ease;
+
+}
+
+section {
+  margin-top: 20%;
+  margin-bottom:20%;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding-left:0px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--ivory);
+  transition: 0.5s;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #FFFFFF;
+}
+
+
+.navbar-nav.align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+.instagram-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Make sure the icon height is 100% of its container */
+}
+
+
+.btn-dark {
+  background: var(--blue);
+  color: var(--ivory);
+  border-radius: 50px;
+  border-width:0px;
+}
+
+.btn-light {
+  background: var(--ivory);
+  color: var(--off-black);
+  border-radius: 50px;
+  border-width:0px;
+}
+
+.btn-light:hover {
+  background: var(--off-black);
+  color: var(--ivory);
+}
+
+/* Base button styles */
+.main-CTA {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--blue);
+  color: var(--ivory);
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.5s ease;
+  border: none;
+}
+
+/* Create the background color effect */
+.main-CTA:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ivory);
+  z-index: 0;
+  transition: left 0.5s ease;
+}
+
+/* Move the background color on hover */
+.main-CTA:hover:before {
+  left: 0;
+}
+
+/* Change the text color on hover */
+.main-CTA:hover span {
+  color: var(--blue);
+}
+
+/* Ensure the text is above the background animation */
+.main-CTA span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.green-slide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--green);
+  z-index: 0;
+  transition: left 0.5s ease;
+}
+
+.green-slide:hover span {
+  color: var(--ivory);
+}
+
+.blue {
+  color: var(--blue);
+}
+
+
+.hero-text {
+  color: var(--ivory);
+}
+
+
+
+/* Navbar styling */
+header.navbar {
+  position: fixed; /* Ensure the navbar stays at the top */
+  width: 100%;
+  z-index: 1000; /* Ensure the navbar is on top of other elements */
+  transition: opacity 0.5s, top 0.5s; /* Smooth transition for de and movement */
+}
+
+.instagram-icon {
+  font-size: 32px;
+  margin-right: 30px;
+  color: var(--ivory);
+}
+
+
+/* Navbar Toggler Button */
+.navbar-toggler {
+  background-color: none;
+
+}
+.navbar-toggler:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: none!important;
+  background-color: var(--bs-gray-800);
+  color: none;
+  width: var(--fs-xxl);
+}
+
+/* Overlay menu styles */
+.overlay {
+  height: 100%;
+  width: 0; /* Start with 0 width */
+  position: fixed;
+  z-index: 1000; /* Ensure it covers all content */
+  top: 0;
+  left: 0;
+  background-color: var(--green);
+  overflow-x: hidden; /* Disable horizontal scrolling */
+  transition: 0.5s; /* Slide effect */
+  overflow: hidden;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 25%; /* 25% from the top */
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.overlay-content a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: var(--ivory);
+  display: block; /* Make links block-level elements */
+  transition: 0.3s;
+}
+
+.overlay-content a:hover {
+  color: #f1f1f1;
+}
+
+.closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  background: none;
+  border: none;
+  color: var(--ivory);
+  transition: 0.3s;
+
+}
+
+
+
+.closebtn:hover {
+  color: #ffffff;
+}
+
+.closebtn:focus {
+  outline: none;
+  box-shadow: none;
+} 
+
+.nav-hidden {
+  display: none;
+}
+
+
+/* Show the overlay menu by increasing width */
+.show-overlay {
+  width: 100%;
+}
+.white-text {
+  color: var(--ivory);
+}
+
+
+/* Ensure the section takes the full height of the viewport */
+.hero-section {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  overflow: hidden; /* Prevent content overflow */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  
+}
+
+.hero-container {
+  margin-bottom: 4em;
+}
+
+/* Style the background image to cover the entire section */
+.hero-img-background {
+  background-image: url('assets/images/pond-wide-cropped.png'); /* Replace with your image path */
+  background-size: cover; /* Make the background cover the entire section */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  width: 100%;
+  height: 100%; /* Ensures it fills the section */
+  display: flex; /* Enables flexbox to center content */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+}
+
+.hero-section h1 {
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+/* Features Section */
+.feature-box {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; /* Ensure both boxes are of equal height */
+}
+
+.feature-content {
+  padding: 5%;
+  border-radius: var(--border-radius);
+}
+
+.gradient { 
+  background: rgb(16,93,158);
+  background: linear-gradient(117deg, rgba(16,93,158,1) -0%, rgba(168,134,185,1) 100%);
+  /*background: rgb(16,93,158);
+  background: linear-gradient(227deg, rgba(16,93,158,1) -0%, rgba(33,78,52,1) 100%);*/
+  color: var(--ivory);
+ }
+
+ .panoramic-img { 
+    background-image: url('assets/images/panorama.png');
+
+  }
+
+
+.feature-content h2 {
+  margin-bottom: 20px;
+}
+
+.feature-content p {
+  margin-bottom: 20px;
+}
+
+.centered-no-back {
+  text-align: center;
+  padding: 0% 10% 0% 10%;
+  font-weight: bold;
+  font-size: var(--fs-md);
+}
+
+
+.feature-image {
+  flex: 1;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--border-radius);
+}
+
+.feature-image-slide {
+  flex: 1;
+  height: 100%;
+  border-radius: var(--border-radius);
+  background-size: cover; /* Start at 90% size */
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-size 0.1s ease; /* Smooth transition */
+}
+
+.with-text { 
+  padding:20%;
+  border-radius: var(--border-radius);
+  text-align: center;
+  color: var(--ivory);
+}
+
+.our-story {
+  background-image: url('assets/images/DSC00490.jpg');
+}
+
+
+.split-text {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.header-text{
+  color: var(--blue);
+}
+
+
+.photo-box {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.photo-box img {
+  display: block;
+  width: 100%;
+  border-radius: var(--border-radius);
+}
+
+.icon-box {
+  text-align: left;
+  color: var(--blue);
+}
+.img-fluid {
+  border-radius: var(--border-radius);
+
+}
+
+#mobileCarousel{
+  border-radius: var(--border-radius);
+}
+
+.carousel-inner {
+  border-radius: var(--border-radius);
+}
+
+.carousel-heading h1 {
+  margin-bottom: var(--content-margin-mobile);
+}
+
+
+.panel {
+  background: var(--green);
+  color: var(--ivory);
+  padding: 10% 15% 10% 15%;
+  border-radius:var(--border-radius);
+  transition: 0.3s ease;
+}
+
+.panel h3 {
+  margin-top: 0; /* Remove default margin for heading */
+}
+
+.panel p {
+  margin-bottom: 0; /* Remove default margin for paragraph */
+}
+
+
+.house-image-container {
+  margin-top: 5%;
+}
+
+.bf-footer{
+  color: var(--blue);
+
+}
+
+
+@media (min-width: 768px) {
+
+.panel-group {
+  display: flex;
+}
+
+.panel-group .col-md-4 {
+  flex: 1; /* Make each column grow to fill available space */
+}
+}
+
+
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  section {
+    margin-bottom:var(--section-margin-mobile);
+    margin-top:var(--section-margin-mobile);
+  }
+  h1 {
+    margin-top:var(--content-margin-mobile);
+    margin-bottom: var(--content-margin-mobile);
+  }
+
+
+  .photo-box {
+   margin-bottom: var(--content-margin-mobile);
+  }
+  .feature-content p {
+    font-size: var();
+  }
+
+
+
+  .icon-box {
+    text-align:center;
+    margin-bottom: var(--content-margin-mobile);
+  }
+
+
+  /* Your CSS rules for extra small devices here */
+}
+
+/* Small devices (tablets, 576px and up) */
+@media (max-width: 767.98px) {
+  p {
+    margin-bottom: 0px;
+  }
+
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (max-width: 768px) {
+
+  .feature-box {
+    display: block;
+  }
+
+
+  .house-text-box ul {
+    column-count: 4;
+  }
+  .house-text-box ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next row */
+}
+
+.house-text-box ul li {
+  flex: 0 0 50%; /* Each item takes up 50% width (2 columns) */
+  margin-bottom: 10px;
+}
+
+  /* Your CSS rules for medium devices here */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  body {
+    font-size: var(--body-font-size-lg-screen);
+  }
+
+}
+
+.quotes {
+  font-size: 2em;
+  color: var(--ivory);
+}
+
+
