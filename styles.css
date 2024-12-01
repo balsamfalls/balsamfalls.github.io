@@ -137,6 +137,10 @@ ul {
   height: 100%; /* Make sure the icon height is 100% of its container */
 }
 
+.instagram-icon::focus {
+  color: var(--ivory);
+}
+
 
 .btn-dark {
   background: var(--blue);
@@ -474,6 +478,8 @@ header.navbar {
 
 #mobileCarousel{
   border-radius: var(--border-radius);
+  position: relative;
+
 }
 
 .carousel-inner {
@@ -484,12 +490,35 @@ header.navbar {
   margin-bottom: var(--content-margin-mobile);
 }
 
+.mobile-carousel-section .carousel-control-prev,
+.mobile-carousel-section .carousel-control-next {
+  position: absolute;      /* Position absolutely within the container */
+  top: 10px;               /* Distance from the top of the container */
+  z-index: 10;             /* Ensure the controls appear above the content */
+  display: flex;           /* Flexbox to center the icon */
+  align-items: center;     /* Vertically center the icon */
+  justify-content: center; /* Horizontally center the icon */
+  height: 40px;            /* Set the height for the controls */
+  width: 40px;             /* Set the width for the controls */
+  color: var(--brown);
+/*  background-color: rgba(0, 0, 0, 0.5); /* Optional: Darken the background */*/
+/*  border-radius: 50%;      /* Optional: Make the controls round */*/
+}
+
+.mobile-carousel-section .carousel-control-prev {
+  left: 10px; /* Position left control */
+}
+
+.mobile-carousel-section .carousel-control-next {
+  right: 10px; /* Position right control */
+}
+
 
 .panel {
-  background: var(--green);
-  color: var(--ivory);
-  padding: 10% 15% 10% 15%;
-  border-radius:var(--border-radius);
+/*  background: var(--green);*/
+  color: var(--brown);
+  padding: 0% 15% 0% 15%;
+/*  border-radius:var(--border-radius);*/
   transition: 0.3s ease;
 }
 
