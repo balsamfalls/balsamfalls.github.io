@@ -399,6 +399,12 @@ header.navbar {
 
   }
 
+.carousel-inner img {
+  aspect-ratio: 16 / 10;  
+  object-fit: cover; /* Ensures the images scale to fill while maintaining aspect ratio */
+  width: 100%; /* Maintain responsiveness */
+}
+
 
 .feature-content h2 {
   margin-bottom: 20px;
@@ -516,7 +522,7 @@ header.navbar {
 
 .panel {
 /*  background: var(--green);*/
-  color: var(--brown);
+  color: var(--off-black);
   padding: 0% 15% 0% 15%;
 /*  border-radius:var(--border-radius);*/
   transition: 0.3s ease;
@@ -630,5 +636,8 @@ header.navbar {
   font-size: 2em;
   color: var(--ivory);
 }
+
+
+
 
 
