@@ -547,6 +547,12 @@ header.navbar {
 }
 
 
+
+.tito-widget .tito-widget-form {
+  background: var(--green);
+}
+
+
 @media (min-width: 768px) {
 
 .panel-group {
