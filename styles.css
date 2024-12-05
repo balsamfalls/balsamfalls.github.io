@@ -246,6 +246,11 @@ header.navbar {
   color: var(--ivory);
 }
 
+.dark {
+  color: var(--off-black);
+
+}
+
 
 /* Navbar Toggler Button */
 .navbar-toggler {
@@ -551,7 +556,51 @@ header.navbar {
 .tito-widget .tito-widget-form {
   background: var(--green);
 }
+.event-sign-up { 
+  background: var(--ivory);
+  padding: 5%;
+  color: var(--off-black);
+  border-radius: 10px; 
+  text-align: center;
+  margin-bottom: 5%;
+}
 
+
+.event-sign-up p {
+  font-weight: bold;
+}
+.retreat-details i {
+  margin-right: 10px; /* Add space between the icon and text */
+  font-size: 1.2rem; /* Adjust icon size */
+}
+
+.tito-name-label {
+  display: none;
+}
+
+.svg-inline--fa {
+  display: none;
+}
+
+.tito-register-interest-form button {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--blue);
+  color: var(--ivory);
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.5s ease;
+  border: none;
+
+}
+.tito-register-interest-email-field {
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--off-black);
+    outline: none;  }
 
 @media (min-width: 768px) {
 

@@ -78,34 +78,75 @@ function allowScrolling() {
 //     }
 // });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const carousel = document.querySelector('#smoothCarousel .carousel-inner');
-    const carouselItems = Array.from(carousel.children);
-    const totalItems = carouselItems.length;
-    let currentIndex = 0;
+// document.addEventListener("DOMContentLoaded", function() {
+//     const carousel = document.querySelector('#smoothCarousel .carousel-inner');
+//     const carouselItems = Array.from(carousel.children);
+//     const totalItems = carouselItems.length;
+//     let currentIndex = 0;
 
-    function slideNext() {
-        currentIndex = (currentIndex + 1) % totalItems;
+//     function slideNext() {
+//         currentIndex = (currentIndex + 1) % totalItems;
 
-        // Append the first item at the end to create an infinite loop
-        if (currentIndex === 0) {
-            carousel.appendChild(carouselItems[0]);
-            carouselItems.push(carouselItems.shift());
-        }
+//         // Append the first item at the end to create an infinite loop
+//         if (currentIndex === 0) {
+//             carousel.appendChild(carouselItems[0]);
+//             carouselItems.push(carouselItems.shift());
+//         }
 
-        // Slide to the next item
-        carousel.style.transition = "transform 1s ease";
-        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+//         // Slide to the next item
+//         carousel.style.transition = "transform 1s ease";
+//         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-        // After sliding, reset to remove transition effect and adjust the position
-        setTimeout(function() {
-            carousel.style.transition = "none";
-            carousel.style.transform = "translateX(0%)";
-            currentIndex = 0;
-        }, 1000); // Time should match the duration in the `transition` property
+//         // After sliding, reset to remove transition effect and adjust the position
+//         setTimeout(function() {
+//             carousel.style.transition = "none";
+//             carousel.style.transform = "translateX(0%)";
+//             currentIndex = 0;
+//         }, 1000); // Time should match the duration in the `transition` property
 
-        setTimeout(slideNext, 3000); // Adjust this interval for the sliding speed
+//         setTimeout(slideNext, 3000); // Adjust this interval for the sliding speed
+//     }
+
+//     slideNext(); // Start the carousel
+// });
+
+
+function updateButtonText() {
+  const form = document.querySelector(".tito-register-interest-form");
+
+  if (form) {
+    const button = form.querySelector("button, input[type='submit']");
+    if (button) {
+      button.textContent = "Let me know when registration opens";
     }
+  }
+}
 
-    slideNext(); // Start the carousel
+// Observe dynamic changes in the DOM for the button
+const buttonObserver = new MutationObserver(updateButtonText);
+buttonObserver.observe(document.body, { childList: true, subtree: true });
+
+// Call the function once in case the element already exists
+updateButtonText();
+
+// Function to remove the text of the dynamically generated label
+function removeLabelText() {
+  const emailLabel = document.querySelector(".tito-email-label");
+  if (emailLabel) {
+    // Ensure only the text content is cleared
+    emailLabel.childNodes.forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        node.textContent = ""; // Clear text nodes only
+      }
+    });
+    labelObserver.disconnect(); // Stop observing
+  }
+}
+// Create a separate MutationObserver for the label
+const labelObserver = new MutationObserver(removeLabelText);
+
+// Start observing the DOM for changes related to the label
+labelObserver.observe(document.body, {
+  childList: true, // Watch for added/removed children
+  subtree: true,   // Watch the entire subtree for changes
 });
