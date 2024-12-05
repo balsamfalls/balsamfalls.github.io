@@ -631,6 +631,10 @@ header.navbar {
     margin-bottom: var(--content-margin-mobile);
   }
 
+  #events-header {
+    position: relative;
+  }
+
 
   /* Your CSS rules for extra small devices here */
 }
