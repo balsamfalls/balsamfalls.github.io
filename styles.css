@@ -14,6 +14,7 @@
   --blue: #105D9E;
   --off-black: #191919;
   --brown: #8c603f;
+  --yellow: #FFD166;
 
   /* Font sizes */
   --base-font-size: 16px;
@@ -578,24 +579,13 @@ header.navbar {
   display: none;
 }
 
-.svg-inline--fa {
+.tito-email-label .svg-inline--fa {
   display: none;
 }
-
 .tito-register-interest-form button {
   display: none;
-  position: relative;
-  overflow: hidden;
-  background-color: var(--blue);
-  color: var(--ivory);
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  transition: color 0.5s ease;
-  border: none;
-
 }
+
 .tito-register-interest-email-field {
     background: none;
     border: none;
