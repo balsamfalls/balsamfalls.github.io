@@ -60,7 +60,6 @@ h1, h2, h3, h4 {
 /* Apply global font sizes */
 body {
   font-size: var(--fs-base);
-/*  font-size: var(--body-font-size);*/
 }
 
 h1 {
@@ -80,11 +79,11 @@ h4 {
 }
 
 h5 {
-  font-size: var(--heading-5-font-size);
+  font-size: var(--fs-base);
 }
 
 h6 {
-  font-size: var(--heading-6-font-size);
+  font-size: var(--fs-sm);
 }
 
 nav {
@@ -700,6 +699,21 @@ header.navbar {
 .quotes {
   font-size: 2em;
   color: var(--ivory);
+}
+
+ul {
+  list-style-type: disc !important;
+  padding-left: 20px;
+  margin-left: 0;
+  display: block;
+}  
+
+.learning-outcomes li {
+  font-size: var(--fs-base);
+  margin-bottom: 10px;
+
+
+
 }
 
 
