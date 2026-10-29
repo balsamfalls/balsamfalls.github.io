@@ -488,6 +488,13 @@ header.navbar {
 
 }
 
+.booking-section {
+  margin-top:10%;
+  margin-bottom:0%;
+
+
+}
+
 #mobileCarousel{
   border-radius: var(--border-radius);
   position: relative;
